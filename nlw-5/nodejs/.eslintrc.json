@@ -18,16 +18,7 @@
         "no-console" : "off",
         "import/extensions" : "off",
         "import/no-unresolved" : "off",
-        "class-methods-use-this" : ["error",
-            { "exceptMethods":
-                ["up", "down"]
-            }
-        ],
-        "camelcase" : [
-            "error",
-            {
-                "allow" : ["updated_at", "created_at"]
-            }
-        ]
+        "class-methods-use-this" : "off",
+        "camelcase" : "off"
     }
 }

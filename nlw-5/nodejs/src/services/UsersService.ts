@@ -9,6 +9,16 @@ export default class UsersService {
     this.usersRepository = getCustomRepository(UsersRepository);
   }
 
+  async findByEmail(email:string) {
+    const userExists = await this.usersRepository.findOne({
+      where: {
+        email,
+      },
+    });
+
+    return userExists;
+  }
+
   async create(email: string) {
     const userExists = await this.usersRepository.findOne({
       where: {

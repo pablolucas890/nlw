@@ -10,3 +10,7 @@
     - ^ shift p 
     - caminho database
     - sqlite explorer
+- yarn add socket.io
+- yarn add @types/socket.io -D
+- yarn add ejs
+- yarn add socket.io-client

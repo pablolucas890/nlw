@@ -19,6 +19,9 @@
         "import/extensions" : "off",
         "import/no-unresolved" : "off",
         "class-methods-use-this" : "off",
-        "camelcase" : "off"
+        "camelcase" : "off",
+        "no-undef" : "off",
+        "no-shadow" : "off",
+        "no-unused-vars": [ "error" , {"allow" : ["call", "sendMessage"]} ]
     }
 }

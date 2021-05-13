@@ -38,4 +38,13 @@ export default class UsersService {
 
     return user;
   }
+
+  async findEmailById(user_id: string){
+    const userEmail = await this.usersRepository.findOne({
+      where: {
+        id: user_id
+      },
+    });
+    return userEmail;
+  }
 }

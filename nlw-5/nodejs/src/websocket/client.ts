@@ -57,16 +57,20 @@ io.on('connect', (socket) => {
 
     const socket_id = socket.id;
     const conn = await connectionService.findBySocketID(socket_id);
-
+    let userEmail;
+    if(conn?.user_id){
+      userEmail = await usersService.findEmailById(conn.user_id);
+    }
     if (conn) {
       const message = await messagesService.create({
         text,
-        user_id: conn.user_id,
+        user_id: conn.user_id
       });
 
       io.to(socket_admin_id).emit('admin_receive_message', {
         message,
         socket_id,
+        email: userEmail?.email
       });
     } else {
       console.log('error');

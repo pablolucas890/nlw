@@ -1,3 +1,4 @@
+<img src="gif.gif" width="300"> 
 # Anotações
 - TypeOrm com Sqlite
 - yarn add typeorm reflect-metadata sqlite3

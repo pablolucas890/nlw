@@ -1,4 +1,4 @@
-<img align="center" src="gif.gif" width="500"> 
+<center> <img src="gif.gif" width="600"> </center> 
 # Anotações
 - TypeOrm com Sqlite
 - yarn add typeorm reflect-metadata sqlite3

@@ -1,4 +1,4 @@
-<img align="right" src="gif.gif" width="600"> </center> 
+<img align="right" src="gif.gif" width="600">
 
 # Anotações
 - TypeOrm com Sqlite

@@ -1,25 +1,27 @@
 import React from "react";
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import colors from "../styles/colors";
+import { Feather } from '@expo/vector-icons'
+import { TouchableOpacityProps } from "react-native";
 
-interface ButtonProps {
+interface ButtomProps extends TouchableOpacityProps{
     title: string;
 }
 
-export function Button({ title }: ButtonProps) {
+export function Button({title, ...rest}: ButtomProps) {
     return (
-        <TouchableOpacity style={styles.button} activeOpacity={0.3}>
-            <Text style={styles.buttonText}>
-                {title}
-            </Text>
+        <TouchableOpacity style={styles.button} activeOpacity={0.3} {...rest}>
+            <Feather 
+                name="chevron-right"
+                style={styles.buttonIcon}
+            />
         </TouchableOpacity>
     )
 }
 
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: colors
-        .green,
+        backgroundColor: colors.green,
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 16,
@@ -27,8 +29,8 @@ const styles = StyleSheet.create({
         height: 56,
         width: 56
     },
-    buttonText: {
+    buttonIcon: {
         color: colors.white,
-        fontSize: 24
+        fontSize: 28,
     }
 });

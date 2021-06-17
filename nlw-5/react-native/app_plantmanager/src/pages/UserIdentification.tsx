@@ -12,6 +12,8 @@ import colors from "../styles/colors";
 import fonts from "../styles/fonts";
 import { Button } from "../components/ButtonTextGreem";
 import { useNavigation } from "@react-navigation/native";
+import { Alert } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export function UserIdentification() {
 
@@ -35,8 +37,18 @@ export function UserIdentification() {
 
     const navigation = useNavigation();
 
-    function handleConfirmation() {
-        navigation.navigate('Confirmation')
+    async function handleConfirmation() {
+        if(!name){
+            return Alert.alert('Me diz como chamar você...')
+        }
+        await AsyncStorage.setItem('@plantmanager:user',name);
+        navigation.navigate('Confirmation',{
+            title: 'Prontinho',
+            subtitle: 'Vamos começar a cuidar das suas plantinhas com muito cuidado',
+            buttonTitle: 'Começar',
+            icon: 'smile',
+            nextScreen: 'PlantSelect'
+        })
     }
 
     return (

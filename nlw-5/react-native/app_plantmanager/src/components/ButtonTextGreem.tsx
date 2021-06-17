@@ -1,7 +1,6 @@
 import React from "react";
 import { TouchableOpacity, Text, StyleSheet, TouchableOpacityProps } from 'react-native';
 import colors from "../styles/colors";
-import { Feather } from '@expo/vector-icons'
 import fonts from "../styles/fonts";
 
 interface ButtomProps extends TouchableOpacityProps{

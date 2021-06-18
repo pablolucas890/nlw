@@ -1,3 +1,5 @@
+<img src="gif.gif"><hr>
+
 # Anotações
 
 - npm install --global expo-cli
@@ -20,3 +22,4 @@
 - expo install @react-native-community/datetimepicker
 - yarn add date-fns
 - yarn add @react-navigation/bottom-tabs
+- expo install expo-notifications

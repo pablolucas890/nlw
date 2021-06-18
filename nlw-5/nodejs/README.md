@@ -1,6 +1,7 @@
-<img align="right" src="gif.gif" width="600">
+<img src="gif.gif" width="800"><hr>
 
 # Anotações
+
 - TypeOrm com Sqlite
 - yarn add typeorm reflect-metadata sqlite3
 - configurar o ormconfig

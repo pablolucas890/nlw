@@ -4,19 +4,23 @@ import {
     View,
     Text,
     Image,
-    FlatList
+    FlatList,
+    Alert
 } from 'react-native';
 import { Header } from "../components/Header";
 import colors from "../styles/colors";
 import waterDropImg from '../assets/waterdrop.png';
 import { useState } from "react";
-import { LoadPlants, PlantProps } from "../libs/storage";
+import { LoadPlants, PlantProps, StoragePlantProps } from "../libs/storage";
 import { useEffect } from "react";
 import { format } from "date-fns";
 import { formatDistance } from "date-fns/esm";
-import { pt } from "date-fns/locale";
+import { id, pt } from "date-fns/locale";
 import fonts from "../styles/fonts";
 import { PlantCardSecondary } from "../components/PlantCardSecondary";
+import { Load } from "../components/Load";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import * as Notifications from 'expo-notifications';
 
 
 export function MyPlants() {
@@ -24,25 +28,68 @@ export function MyPlants() {
     const [loading,setLoading] = useState(true);
     const [nextWatered,setNextWatered] = useState<string>();
 
+    function handleRemove(plant: PlantProps){
+        Alert.alert('Remover', `Deseja Remover a ${plant.name} ?`,[
+            {
+                text: 'Não',
+                style: 'cancel'
+            },
+            {
+                text: 'Sim',
+                onPress: async () => {
+                    try {
+                        const data = await AsyncStorage.getItem('@plantmanager:plants');
+                        const plants = data ? (JSON.parse(data) as StoragePlantProps) : {};
+                        
+                        if(plants[plant.id].notificationID)
+                            await Notifications.cancelScheduledNotificationAsync(plants[plant.id].notificationID)
+
+                        delete plants[plant.id];
+
+                        await AsyncStorage.setItem(
+                            '@plantmanager:plants',
+                            JSON.stringify(plants)
+                        )
+
+                        SetMyPlants((oldData) => (
+                            oldData?.filter((item) => item.id !== plant.id)
+                        ))
+                    } catch (error) {
+                        Alert.alert('Não foi possível remover!!')
+                    }
+                }
+            }
+        ])
+    }
     useEffect(() => {
         async function loadStorageData() {
             const plantsStorage =  await LoadPlants();
-
-            const nextTime = formatDistance(
-                new Date(plantsStorage[0].dateTimeNotification).getTime(),
-                new Date().getTime(),
-                {locale: pt }
-            );
-
-            setNextWatered(
-                `Não esqueça de regar a ${plantsStorage[0].name} à ${nextTime} horas`
-            )
-
-            SetMyPlants(plantsStorage);
+            if(plantsStorage[0]){
+                const nextTime = formatDistance(
+                    new Date(plantsStorage[0].dateTimeNotification).getTime(),
+                    new Date().getTime(),
+                    {locale: pt }
+                );
+    
+                setNextWatered(
+                    `Não esqueça de regar a ${plantsStorage[0].name} à ${nextTime} horas`
+                )
+    
+                SetMyPlants(plantsStorage);
+            }else{
+                setNextWatered(
+                    `Sem Plantas Cadastradas...`
+                )
+            }
+            setLoading(false);
         }
 
         loadStorageData();
+        
     })
+    if(loading){
+        return <Load />
+    }
     return (
         <View style={styles.container}>
             <Header />
@@ -63,7 +110,13 @@ export function MyPlants() {
                     data={myPlants}
                     keyExtractor={(item) => String(item.id)}
                     renderItem={({item}) => (
-                        <PlantCardSecondary data={item}/>
+                        <PlantCardSecondary 
+                            handleRemove={() => {handleRemove(item)}}
+                            data={{
+                                name: item.name,
+                                photo: item.photo,
+                                hour:format(new Date(item.dateTimeNotification),'HH:mm') 
+                        }}/>
                     )}
                     showsVerticalScrollIndicator={false}
                 />

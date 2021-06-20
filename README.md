@@ -3,7 +3,7 @@
 
 <h4>Este repositório contém:</h4><br><h3 align="center">🚀🚀 NLW-5: 🚀🚀</h3><br>
 
-- <b><a href="https://github.com/pablolucas890/nlw/tree/main/nlw-5/nodejs">NodeJs (nlw-5)</a></b><br><br><img src="./nlw-5/nodejs/gif.gif" width="775"><br><br>
+- <b><a href="https://github.com/pablolucas890/nlw/tree/main/nlw-5/nodejs">NodeJs (nlw-5)</a></b><br><br><img src="./nlw-5/nodejs/gif.gif" width="800"><br><br>
 - <b><a href="https://github.com/pablolucas890/nlw/tree/main/nlw-5/react-native">React Native (nlw-5)</a></b><br><br><img src="./nlw-5/react-native/gif.gif"  width="240"> 🚀 <img src="./nlw-5/react-native/gif.gif" width="240"> 🚀 <img src="./nlw-5/react-native/gif.gif" width="240">
 <br>
 <h3 align="center">🚀🚀 NLW-6: 🚀🚀</h3><br>

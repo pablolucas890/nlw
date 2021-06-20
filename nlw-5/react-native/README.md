@@ -1,7 +1,7 @@
 <img src="gif.gif"><hr>
 
 # Anotações
-
+- Prototipação: https://www.figma.com/file/IhQRtrOZdu3TrvkPYREzOy/PlantManager/duplicate?node-id=0%3A1
 - npm install --global expo-cli
 - expo init appname
 - expo start

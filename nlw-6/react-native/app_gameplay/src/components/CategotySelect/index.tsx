@@ -4,8 +4,13 @@ import {
 } from 'react-native';
 import { styles } from './styles';
 import { categories } from '../../utils/categories';
+import Category from '../Category';
 
-export default function CategotySelect() {
+interface Props {
+	categorySelected: string
+	setCategory: (categoryId: string) => void;
+}
+export default function CategotySelect({ categorySelected ,setCategory}: Props) {
 	return (
 		<ScrollView
 			horizontal
@@ -14,11 +19,15 @@ export default function CategotySelect() {
 			contentContainerStyle={{ paddingRight: 40 }}
 		>
 			{
-				categories.map(category => {
-					<Category 
-					
+				categories.map(category => (
+					<Category
+						key={category.id}
+						title={category.title}
+						icon={category.icon}
+						checked={category.id === categorySelected}
+						onPress={() => setCategory(category.id)}
 					/>
-				})
+				))
 			}
 		</ScrollView>
 	);

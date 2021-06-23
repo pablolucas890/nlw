@@ -23,6 +23,7 @@ export const styles = StyleSheet.create({
 		fontFamily: theme.fonts.title700,
 		fontSize: 15,
 		color: theme.colors.heading,
+		marginTop: 15
 	},
 	check: {
 		width: 12,

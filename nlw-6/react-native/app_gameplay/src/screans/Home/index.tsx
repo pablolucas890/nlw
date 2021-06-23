@@ -12,9 +12,11 @@ import { useState } from 'react';
 import ListHeader from '../../components/ListHeader';
 import { Appointment } from '../../components/Appointment';
 import ListDivider from '../../components/ListDivider';
+import { useNavigation } from '@react-navigation/native';
 
 export function Home() {
 	const [category, setCategory] = useState('');
+	const navigation = useNavigation();
 	const appointments = [
 		{
 			id: '1',
@@ -48,6 +50,9 @@ export function Home() {
 			setCategory(categoryId);
 		}
 	}
+	function handleApointmentDetails(){
+		navigation.navigate('AppointmentDetails')
+	}
 	return (
 		<View style={styles.container}>
 			<View style={styles.header}>
@@ -58,6 +63,7 @@ export function Home() {
 				<CategotySelect
 					categorySelected={category}
 					setCategory={handleCategorySelect}
+					//hasCheckBox={true}
 				/>
 
 				<View style={styles.content}>
@@ -71,6 +77,7 @@ export function Home() {
 						renderItem={({ item }) => (
 							<Appointment
 								data={item}
+								onPress={handleApointmentDetails}
 							/>
 						)}
 						ItemSeparatorComponent={() => <ListDivider /> }

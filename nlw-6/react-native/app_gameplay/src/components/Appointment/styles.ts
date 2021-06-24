@@ -7,49 +7,57 @@ export const styles = StyleSheet.create({
 		flexDirection: 'row',
 		alignItems: 'center'
 	},
-	content:{
+	content: {
 		flex: 1,
 	},
-	header:{
+	header: {
 		width: '100%',
 		flexDirection: 'row',
 		justifyContent: 'space-between',
 		marginBottom: 12
 	},
-	title:{
+	title: {
 		fontFamily: theme.fonts.title700,
 		color: theme.colors.heading,
 		fontSize: 18,
 	},
-	category:{
+	category: {
 		fontFamily: theme.fonts.text400,
 		color: theme.colors.highlight,
 		fontSize: 13,
 		marginRight: 24
 	},
-	footer:{
+	footer: {
 		width: '100%',
 		flexDirection: 'row',
 		justifyContent: 'space-between',
 	},
-	dateInfo:{
+	dateInfo: {
 		flexDirection: 'row',
 		alignItems: 'center',
 	},
-	playerInfo:{
+	playerInfo: {
 		flexDirection: 'row',
 		alignItems: 'center',
 	},
-	player:{
+	player: {
 		fontFamily: theme.fonts.text500,
 		fontSize: 13,
 		marginLeft: 7,
-		marginRight:  24
+		marginRight: 24
 	},
-	date:{
+	date: {
 		fontFamily: theme.fonts.text500,
 		color: theme.colors.highlight,
 		fontSize: 13,
 		marginLeft: 7
+	},
+	guildIcon: {
+		height: 67,
+		width: 64,
+		borderRadius: 8,
+		alignItems: 'center',
+		justifyContent: 'center',
+		marginRight: 20
 	}
 })

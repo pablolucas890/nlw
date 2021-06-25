@@ -4,7 +4,7 @@ import { useFonts } from 'expo-font';
 import { Inter_400Regular, Inter_500Medium } from '@expo-google-fonts/inter';
 import { Rajdhani_500Medium, Rajdhani_700Bold } from '@expo-google-fonts/rajdhani';
 import AppLoading from 'expo-app-loading';
-import { AuthContext } from './src/context/auth';
+import { AuthProvider } from './src/hooks/auth';
 
 import { BackGround } from './src/components/BackGround';
 import Routes from './src/routes';
@@ -28,15 +28,9 @@ export default function App() {
 				backgroundColor='transparent'
 				translucent
 			/>
-			<AuthContext.Provider
-				value={{
-					name: 'Pablo',
-					email: 'pablolucas890@gmail.com',
-					avatar: 'pablo.png'
-				}}
-			>
+			<AuthProvider>
 				<Routes />
-			</AuthContext.Provider>
+			</AuthProvider>
 		</BackGround>
 	);
 }

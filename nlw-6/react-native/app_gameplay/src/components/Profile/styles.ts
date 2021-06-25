@@ -4,7 +4,8 @@ import { theme } from '../../global/styles/theme';
 export const styles = StyleSheet.create({
 	container: {
 		flexDirection: 'row',
-		alignItems: 'center'
+		alignItems: 'center',
+		marginTop: 10
 	},
 	user: {
 		flexDirection: 'row'

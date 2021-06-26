@@ -3,22 +3,35 @@ import {
 	View,
 	Image
 } from 'react-native';
+import { CDN_ID } from '../../config';
 import { styles } from './styles';
+import DiscordSvg from '../../assets/discord.svg'
 
-interface Props{
+interface Props {
 	guildId: string;
-	iconId: string;
+	iconId: string | null;
 }
 
-export default function GuildIcon() {
+export default function GuildIcon({ iconId, guildId }: Props) {
 
-	const uri = "https://s2.glbimg.com/sXsPFRk4Vmct2ALKnCa1t_YePqg=/0x0:1514x917/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2020/h/w/Abq4oBSySsO0xmGnkDlg/discord.jpg"
+	const uri = `${CDN_ID}/icons/${guildId}/${iconId}.png`
 
 	return (
-		<Image
-			style={styles.image}
-			source={{ uri }}
-			resizeMode="cover"
-		/>
+		<View style={styles.container}>
+			{
+				iconId
+					?
+					<Image
+						style={styles.image}
+						source={{ uri }}
+						resizeMode="cover"
+					/>
+					:
+					<DiscordSvg 
+						width={40}
+						height={40}
+					/>
+		}
+		</View>
 	);
 }

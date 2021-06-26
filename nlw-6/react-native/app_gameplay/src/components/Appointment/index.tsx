@@ -35,7 +35,10 @@ export function Appointment({ data, ...rest }: Props) {
 					style={styles.guildIcon}
 					colors={[theme.colors.secondary50, theme.colors.secondary70]}
 				>
-					<GuildIcon />
+					<GuildIcon
+						guildId={data.guild.id}
+						iconId={data.guild.icon}
+					/>
 				</LinearGradient>
 				<View style={styles.content}>
 					<View style={styles.header}>
@@ -43,7 +46,13 @@ export function Appointment({ data, ...rest }: Props) {
 							{data.guild.name}
 						</Text>
 						<Text style={styles.category}>
-							{category.title}
+							{
+								category
+									?
+									category.title
+									:
+									' '
+							}
 						</Text>
 					</View>
 
@@ -64,7 +73,7 @@ export function Appointment({ data, ...rest }: Props) {
 									{ color: data.guild.owner ? theme.colors.primary : theme.colors.on }
 								]}
 							>
-								{data.guild.owner ? "Anfitrião" : "Visitante"}s
+								{data.guild.owner ? "Anfitrião" : "Visitante"}
 							</Text>
 						</View>
 					</View>

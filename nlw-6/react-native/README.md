@@ -1,3 +1,4 @@
+<img src="gif.gif"><hr>
 
 # Anotações de Estudo
 
@@ -33,8 +34,9 @@
         - Criar uma url de autenticação no servidor para o startAsync do authsession redirecionar
         - yarn add axios
 - Async Storage
-
     - expo install @react-native-async-storage/async-storage
+- UUID
+    - yarn add react-native-uuid
 # Anotações de Download
 
 - git clone chave.sh

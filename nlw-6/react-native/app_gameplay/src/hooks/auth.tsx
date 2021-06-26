@@ -26,6 +26,7 @@ interface AuthContextData {
 	user: User;
 	loading: boolean;
 	singIn: () => Promise<void>;
+	singOut: () => Promise<void>;
 }
 
 interface AuthProviderProps {
@@ -66,9 +67,8 @@ function AuthProvider({ children }: AuthProviderProps) {
 					...userInfo.data,
 					firstName,
 					token: params.access_token
-
 				}
-				const isStorage = await AsyncStorage.setItem(COLLECTION_USER, JSON.stringify(userData));
+				await AsyncStorage.setItem('@gameplay:user', JSON.stringify(userData));
 				setUser(userData);
 			} else {
 				Alert.alert('Erro ao receber o token')
@@ -79,26 +79,34 @@ function AuthProvider({ children }: AuthProviderProps) {
 			setLoading(false)
 		}
 
-		async function loadUserStorageData() {
-			const storage = await AsyncStorage.getItem(COLLECTION_USER);
-			if (storage) {
-				const userLogged = JSON.parse(storage) as User;
-				api.defaults.headers.authorization = `Bearer ${userLogged.token}`
 
-				setUser(userLogged);
-			}
+	}
+	async function singOut() {
+		setUser({} as User);
+		await AsyncStorage.clear()
+	}
+	async function loadUserStorageData() {
+		const storage = await AsyncStorage.getItem('@gameplay:user');
+		const userLogged = storage ? (JSON.parse(storage) as User) : {} as User;
+		if (userLogged) {
+			api.defaults.headers.authorization = `Bearer ${userLogged.token}`
+			setUser(userLogged);
+		} else {
+			console.log('Sem usuario no armazenamento interno')
 		}
 
-		// useEffect(() => {
-		//	loadUserStorageData();
-		// }, [])
 	}
+
+	useEffect(() => {
+		loadUserStorageData();
+	}, [])
 	return (
 		<AuthContext.Provider
 			value={{
 				user,
 				loading,
-				singIn
+				singIn,
+				singOut
 			}}
 		>
 			{children}

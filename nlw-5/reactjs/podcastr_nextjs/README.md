@@ -64,3 +64,4 @@ export async function getStaticProps(){
 -   Rodar em produção
     -   yarn build
     -   yarn start
+-   Instalar axios

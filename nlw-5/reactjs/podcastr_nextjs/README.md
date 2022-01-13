@@ -65,3 +65,5 @@ export async function getStaticProps(){
     -   yarn build
     -   yarn start
 -   Instalar axios
+-   Instalar slider 
+    -   yarn add rc-slider

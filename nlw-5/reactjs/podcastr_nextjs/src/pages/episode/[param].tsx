@@ -7,6 +7,8 @@ import { api } from "../../services/api";
 import { convertDurationToTimeString } from "../../utils/convertDurationToTimeString";
 import styles from './episode.module.scss';
 import Link from 'next/link'
+import { useContext } from "react";
+import { PlayerContext } from "../../contexts/PlayerContext";
 
 interface Episode {
     id: string;
@@ -26,7 +28,7 @@ interface EpisodeProps {
 }
 
 export default function Episode({ episode }: EpisodeProps) {
-
+    const { play } = useContext(PlayerContext);
     return (
         <div className={styles.episode}>
             <div className={styles.thumbnailContainer}>
@@ -41,7 +43,7 @@ export default function Episode({ episode }: EpisodeProps) {
                     src={episode.thumbnail}
                     objectFit="cover"
                 />
-                <button type="button">
+                <button type="button" onClick={() => play(episode)}>
                     <img src="/play.svg" alt="Tocar Episódio" />
                 </button>
             </div>

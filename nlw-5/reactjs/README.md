@@ -1,3 +1,6 @@
+<img src="gif.gif" width="800"><hr>
+
+
 # Anotações
 
 -   Instalar node e npm

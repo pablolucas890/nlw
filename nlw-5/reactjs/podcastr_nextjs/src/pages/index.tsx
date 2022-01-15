@@ -8,6 +8,7 @@ import { convertDurationToTimeString } from '../utils/convertDurationToTimeStrin
 import styles from './index.module.scss';
 import { useContext } from 'react';
 import { PlayerContext } from '../contexts/PlayerContext';
+import Head from 'next/head';
 
 interface Episode {
   id: string;
@@ -27,13 +28,18 @@ interface HomeProps {
 }
 
 export default function Home({ lastestEpisodes, allEpisodes }: HomeProps) {
-  
+
   const { playList } = useContext(PlayerContext)
   const episodeList = [...lastestEpisodes, ...allEpisodes];
 
 
   return (
     <div className={styles.homePage}>
+      <Head>
+        <title>
+          Home | PodCastr
+        </title>
+      </Head>
       <section className={styles.lastestEpisodes}>
         <h2>Últimos Lançamentos</h2>
         <ul>

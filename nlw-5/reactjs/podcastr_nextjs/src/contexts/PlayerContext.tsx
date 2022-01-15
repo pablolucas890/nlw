@@ -49,12 +49,15 @@ export function PlayerContextProvider({ children }: PlayerContextProviderProps) 
         setCurrentEpisode(0);
         setPlaying(true)
     }
-    function toggleShuf(){
+    function toggleShuf() {
         setShuf(!isShuf);
     }
     function playNext() {
         const nextEpisodeIndex = currentEpisode + 1;
-        if (nextEpisodeIndex < episodeList.length) {
+        if (isShuf) {
+            const nextEpisodeRandomIndex = Math.floor(Math.random() * episodeList.length);
+            setCurrentEpisode(nextEpisodeRandomIndex)
+        } else if (nextEpisodeIndex < episodeList.length) {
             setCurrentEpisode(currentEpisode + 1)
         }
 

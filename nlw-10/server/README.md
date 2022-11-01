@@ -1,4 +1,4 @@
-# NLW Copa
+# NLW Copa - Server
 
 - install typescript
 - npx tsc --init

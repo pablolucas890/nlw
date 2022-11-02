@@ -9,6 +9,7 @@
 - npx prisma init --datasource-provider SQLite
 - install prisma extension
 - npx prisma migrate dev
-- npx prisma studio 
-- npm i prisma-erd-generator -D
+- npx prisma studio -> visualiza tabelas como o phpmyadmin
+- npm i prisma-erd-generator -D 
+- npx prisma generate -> visualiza diagrama de ER
 - npm i @mermaid-js/mermaid-cli -D

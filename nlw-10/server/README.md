@@ -10,6 +10,8 @@
 - install prisma extension
 - npx prisma migrate dev
 - npx prisma studio -> visualiza tabelas como o phpmyadmin
-- npm i prisma-erd-generator -D 
+- npm i prisma-erd-generator -D
 - npx prisma generate -> visualiza diagrama de ER
 - npm i @mermaid-js/mermaid-cli -D
+- npm install zod -> verifica se o valor e nulo em requests e tipa
+- npm install short-unique-id -> gera ids 

@@ -5,10 +5,10 @@ import Logo from '../assets/logo.svg'
 import { Button } from '../components/Button';
 import { useAuth } from '../hooks/useAuth';
 
+
 export function SignIn() {
 
     const { user, signIn } = useAuth();
-    console.log("USER", user)
     return (
         <Center flex={1} bgColor="gray.900" alignItems={"center"} justifyContent="center" p={7}>
             <StatusBar barStyle={'default'} />

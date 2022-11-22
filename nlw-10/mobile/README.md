@@ -14,3 +14,20 @@ declare module "*.svg" {
     export default content
 }
 ```
+- npx expo install expo-auth-session expo-random
+- npx expo install expo-web-browser
+- console.cloud.google.com
+    - Novo Projeto
+    - APIs e Serviços
+    - configurar tela de permissão
+    - Credenciais
+    - Criar Credenciais
+    - ID do Client OAuth
+    - URI Autorizada https://auth.expo.io
+    - URI Nao Autorizada
+        - logar no expo no celular
+        - logar no expo no terminal
+        - npx expo login
+        - https://auth.expo.io/@user/slug
+    - pegar chave
+-  npm i phosphor-react-native

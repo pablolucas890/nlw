@@ -1,4 +1,6 @@
 # Nlw Copa - Mobile
+
+----------
 -  (Compoents with buttons, etc)
 - npx expo install react-native-svg@12.1.1
 - npx expo install react-native-safe-area-context
@@ -31,3 +33,10 @@ declare module "*.svg" {
         - https://auth.expo.io/@user/slug
     - pegar chave
 -  npm i phosphor-react-native
+
+----------
+## Run
+- `nvm use 16.16.0`
+- `npm install`
+- `npx expo login # logar no expo no celular e no terminal`
+- `npm run start`

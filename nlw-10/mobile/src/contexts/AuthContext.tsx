@@ -51,7 +51,7 @@ export function AuthContextProvider({ children }: AuthProviderProps) {
             setIsUserLoading(false)
         }
     }
-    
+
     async function signInWithGoole(accessToken: string) {
         console.log("TOKEN DE AUTENTICAÇÃO ======> ", accessToken)
     }

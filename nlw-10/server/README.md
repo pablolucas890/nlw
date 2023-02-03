@@ -17,7 +17,7 @@
 - npm i @mermaid-js/mermaid-cli -D
 - npm install zod -> verifica se o valor e nulo em requests e tipa
 - npm install short-unique-id -> gera ids
-
+- npm i @fastify/jwt
 ----------
 ## Run
 - `nvm use 16.16.0`

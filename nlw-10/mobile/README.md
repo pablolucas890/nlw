@@ -33,7 +33,10 @@ declare module "*.svg" {
         - https://auth.expo.io/@user/slug
     - pegar chave
 -  npm i phosphor-react-native
-
+-  npm install @react-navigation/native
+-  npx expo install react-native-screens react-native-safe-area-context
+-  npm install @react-navigation/bottom-tabs
+-  npm install axios
 ----------
 ## Run
 - `nvm use 16.16.0`

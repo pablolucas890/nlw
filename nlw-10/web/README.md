@@ -1,5 +1,7 @@
 # Nlw Copa - Web
 
+<img src="web.gif">
+
 ----------
 ## Notes
 - npx create-next-app@latest
@@ -7,7 +9,7 @@
 - npx tailwindcss init -p
 - axios
 ----------
-## Run
+## Development
 - `nvm use 16.16.0`
 - `npm install`
 - `npm run dev`

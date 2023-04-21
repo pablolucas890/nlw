@@ -1,5 +1,7 @@
 # NLW Copa - Server
 
+<img src="web.gif">
+
 ----------
 ## Notes
 - install typescript
@@ -19,7 +21,7 @@
 - npm install short-unique-id -> gera ids
 - npm i @fastify/jwt
 ----------
-## Run
+## Development
 - `nvm use 16.16.0`
 - `npm install`
 - `npx prisma migrate dev`

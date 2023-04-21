@@ -1,6 +1,10 @@
 # Nlw Copa - Mobile
 
+<img src="mobile.gif">
+
 ----------
+## Notes
+
 -  (Compoents with buttons, etc)
 - npx expo install react-native-svg@12.1.1
 - npx expo install react-native-safe-area-context
@@ -38,7 +42,7 @@ declare module "*.svg" {
 -  npm install @react-navigation/bottom-tabs
 -  npm install axios
 ----------
-## Run
+## Development
 - `nvm use 16.16.0`
 - `npm install`
 - `npx expo login # logar no expo no celular e no terminal`

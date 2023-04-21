@@ -22,8 +22,8 @@
 - <b><a href="https://github.com/pablolucas890/nlw/tree/main/nlw-10/mobile">Mobile (nlw-10)</a></b><br><br><img src="./nlw-10/mobile/mobile.gif" width="220">|<img src="./nlw-10/mobile/mobile.gif" width="220">|<img src="./nlw-10/mobile/mobile.gif" width="220">
 ---
 
-- <b><a href="https://github.com/pablolucwebas890/nlw/tree/main/nlw-10/web">Web (nlw-10)</a></b><br><br><img src="./nlw-10/web/web.gif" width="800">
+- <b><a href="https://github.com/pablolucas890/nlw/tree/main/nlw-10/web">Web (nlw-10)</a></b><br><br><img src="./nlw-10/web/web.gif" width="800">
 ---
 
-- <b><a href="https://github.com/pablolucwebas890/nlw/tree/main/nlw-10/server">Server (nlw-10)</a></b><br><br><img src="./nlw-10/web/web.gif" width="800">
+- <b><a href="https://github.com/pablolucas890/nlw/tree/main/nlw-10/server">Server (nlw-10)</a></b><br><br><img src="./nlw-10/web/web.gif" width="800">
 
